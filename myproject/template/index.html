@@ -1,0 +1,18 @@
+{% load static %}<!--to load static-->
+<!-- <h1>welcome , {{name}} age is {{age}}</h1> -->
+<link rel="stylesheet" href="{% static 'style.css' %}"> <!-- not same as html file -->
+<!-- <h1>hey welcome to my project</h1> -->
+<!-- <form method="POST" action="counter"> action is where we want to send data to or url -->
+    <!-- {% csrf_token %}
+    <textarea name="text" rows="25" cols="100"></textarea><br>
+    <input type="submit">
+</form> --> 
+{% if user.is_authenticated %}
+<h5>welcome {{user.username}}</h5>
+<a href="logout">logout</a>
+{% else %}
+<a href="login">login or signup</a>
+{% endif %}
+{% for i in features %}
+<h1>{{i.name}}  {{i.details}}</h1>
+{% endfor %}
